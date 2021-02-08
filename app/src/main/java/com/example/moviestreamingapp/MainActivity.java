@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         sliderPager = findViewById(R.id.slider_pager);
-        indicator = findViewById(R.id.indicator);
+         indicator = findViewById(R.id.indicator);
 
 
         //prepare a list of slides
