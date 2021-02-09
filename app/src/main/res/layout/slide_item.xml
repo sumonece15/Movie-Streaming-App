@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="250dp">
+    android:layout_height="220dp">
 
     <ImageView
         android:scaleType="centerCrop"
@@ -35,14 +35,14 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="80dp"
         app:layout_constraintBottom_toBottomOf="@+id/slide_img"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/gradient_bg" />
 
     <TextView
-        android:textSize="24sp"
+        android:textSize="20sp"
         android:textColor="#ffffff"
         android:id="@+id/slide_title"
         android:layout_width="0dp"
