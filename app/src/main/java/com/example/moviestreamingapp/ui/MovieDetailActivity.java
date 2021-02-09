@@ -1,6 +1,7 @@
 package com.example.moviestreamingapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -10,14 +11,20 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.moviestreamingapp.R;
+import com.example.moviestreamingapp.adapters.CastAdapter;
+import com.example.moviestreamingapp.models.Cast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MovieDetailActivity extends AppCompatActivity {
 
     private ImageView MovieThumbnailImg,MovieCoverImg;
     private TextView tv_title,tv_description;
     private FloatingActionButton play_fab;
-    private RecyclerView rv_Cast;
+    private RecyclerView RvCast;
+    private CastAdapter castAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,13 +33,16 @@ public class MovieDetailActivity extends AppCompatActivity {
         // ini views
         iniViews();
 
+        // setup list cast
+        setupRvCast();
+
 
 
 
     }
 
     void iniViews() {
-        rv_Cast = findViewById(R.id.rv_Cast);
+        RvCast = findViewById(R.id.rv_Cast);
         play_fab = findViewById(R.id.play_fab);
         String movieTitle = getIntent().getExtras().getString("title");
         int imageResourceId = getIntent().getExtras().getInt("imgURL");
@@ -52,6 +62,25 @@ public class MovieDetailActivity extends AppCompatActivity {
 
 
 
+
+
+    }
+
+    void setupRvCast(){
+
+        List<Cast> mdata = new ArrayList<>();
+        mdata.add(new Cast("name", R.drawable.ice_age_john_leguizamo));
+        mdata.add(new Cast("name", R.drawable.ice_age_ray_romano));
+        mdata.add(new Cast("name", R.drawable.ice_age_jessie_j));
+        mdata.add(new Cast("name", R.drawable.ice_age_denis_leary));
+        mdata.add(new Cast("name", R.drawable.ice_age_simon_pegg));
+        mdata.add(new Cast("name", R.drawable.ice_age_queen_latifah));
+        mdata.add(new Cast("name", R.drawable.ice_age_josh_peck));
+
+
+        castAdapter = new CastAdapter(this, mdata);
+        RvCast.setAdapter(castAdapter);
+        RvCast.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
 
     }

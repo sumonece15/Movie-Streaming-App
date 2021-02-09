@@ -2,9 +2,9 @@ package com.example.moviestreamingapp.models;
 
 public class Cast {
     String name;
-    String img_link;
+    int img_link;
 
-    public Cast(String name, String img_link) {
+    public Cast(String name, int img_link) {
         this.name = name;
         this.img_link = img_link;
     }
@@ -17,11 +17,11 @@ public class Cast {
         this.name = name;
     }
 
-    public String getImg_link() {
+    public int getImg_link() {
         return img_link;
     }
 
-    public void setImg_link(String img_link) {
+    public void setImg_link(int img_link) {
         this.img_link = img_link;
     }
 }
