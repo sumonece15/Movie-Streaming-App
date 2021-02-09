@@ -1,6 +1,7 @@
 package com.example.moviestreamingapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.animation.AnimationUtils;
@@ -16,6 +17,7 @@ public class MovieDetailActivity extends AppCompatActivity {
     private ImageView MovieThumbnailImg,MovieCoverImg;
     private TextView tv_title,tv_description;
     private FloatingActionButton play_fab;
+    private RecyclerView rv_Cast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class MovieDetailActivity extends AppCompatActivity {
     }
 
     void iniViews() {
+        rv_Cast = findViewById(R.id.rv_Cast);
         play_fab = findViewById(R.id.play_fab);
         String movieTitle = getIntent().getExtras().getString("title");
         int imageResourceId = getIntent().getExtras().getInt("imgURL");
