@@ -12,6 +12,7 @@
 
 
     <ImageView
+        android:transitionName="sharedName"
         android:scaleType="centerCrop"
         android:id="@+id/item_movie_img"
         android:layout_width="0dp"

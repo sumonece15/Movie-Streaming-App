@@ -1,13 +1,19 @@
 package com.example.moviestreamingapp;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -16,7 +22,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MovieItemClickListener{
 
     private List<Slide> listSlides;
     private ViewPager sliderPager;
@@ -64,6 +70,32 @@ public class MainActivity extends AppCompatActivity {
         MovieAdapter movieAdapter = new MovieAdapter(this,lstMovies,this);
         MoviesRV.setAdapter(movieAdapter);
         MoviesRV.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    @Override
+    public void onMovieClick(Movie movie, ImageView movieImageView) {
+
+        // here we send movie information to detail activity
+        // also we ll create the transition animation between the two activity
+
+        Intent intent = new Intent(this,MovieDetailActivity.class);
+        // send movie information to deatilActivity
+        intent.putExtra("title",movie.getTitle());
+        intent.putExtra("imgURL",movie.getThumbnail());
+        intent.putExtra("imgCover",movie.getCoverPhoto());
+        // lets crezte the animation
+        ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,
+                movieImageView,"sharedName");
+
+        startActivity(intent,options.toBundle());
+
+
+        // i l make a simple test to see if the click works
+
+        Toast.makeText(this,"item clicked : " + movie.getTitle(), Toast.LENGTH_SHORT).show();
+        // it works great
+
     }
 
 
