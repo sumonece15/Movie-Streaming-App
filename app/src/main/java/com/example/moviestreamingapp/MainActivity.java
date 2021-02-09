@@ -2,6 +2,8 @@ package com.example.moviestreamingapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Context;
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private List<Slide> listSlides;
     private ViewPager sliderPager;
     private TabLayout indicator;
+    private RecyclerView MoviesRV ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         sliderPager = findViewById(R.id.slider_pager);
          indicator = findViewById(R.id.indicator);
+        MoviesRV = findViewById(R.id.Rv_movies);
 
 
         //prepare a list of slides
@@ -44,6 +48,22 @@ public class MainActivity extends AppCompatActivity {
         timer.scheduleAtFixedRate(new MainActivity.SliderTimer(),4000,6000);
 
         indicator.setupWithViewPager(sliderPager,true);
+
+        // Recyclerview Setup
+        // ini data
+
+        List<Movie> lstMovies = new ArrayList<>();
+        lstMovies.add(new Movie("Kumfu Panda",R.drawable.kumfu_panda));
+        lstMovies.add(new Movie("Ice Age",R.drawable.ice_age));
+        lstMovies.add(new Movie("Minions",R.drawable.minions));
+        lstMovies.add(new Movie("Rampage",R.drawable.rampage));
+
+
+
+
+        MovieAdapter movieAdapter = new MovieAdapter(this,lstMovies,this);
+        MoviesRV.setAdapter(movieAdapter);
+        MoviesRV.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
     }
 
 
