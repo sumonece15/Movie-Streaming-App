@@ -1,6 +1,5 @@
-package com.example.moviestreamingapp;
+package com.example.moviestreamingapp.ui;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -8,13 +7,18 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.ActivityOptions;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.moviestreamingapp.models.Movie;
+import com.example.moviestreamingapp.adapters.MovieAdapter;
+import com.example.moviestreamingapp.adapters.MovieItemClickListener;
+import com.example.moviestreamingapp.R;
+import com.example.moviestreamingapp.models.Slide;
+import com.example.moviestreamingapp.adapters.SliderPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -22,7 +26,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity implements MovieItemClickListener{
+public class MainActivity extends AppCompatActivity implements MovieItemClickListener {
 
     private List<Slide> listSlides;
     private ViewPager sliderPager;

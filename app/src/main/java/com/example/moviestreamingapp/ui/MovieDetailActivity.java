@@ -1,9 +1,11 @@
-package com.example.moviestreamingapp;
+package com.example.moviestreamingapp.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.ImageView;
+
+import com.example.moviestreamingapp.R;
 
 public class MovieDetailActivity extends AppCompatActivity {
 
