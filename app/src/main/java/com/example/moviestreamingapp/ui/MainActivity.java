@@ -19,6 +19,7 @@ import com.example.moviestreamingapp.adapters.MovieItemClickListener;
 import com.example.moviestreamingapp.R;
 import com.example.moviestreamingapp.models.Slide;
 import com.example.moviestreamingapp.adapters.SliderPagerAdapter;
+import com.example.moviestreamingapp.utils.DataSource;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements MovieItemClickLis
     private List<Slide> listSlides;
     private ViewPager sliderPager;
     private TabLayout indicator;
-    private RecyclerView MoviesRV;
+    private RecyclerView MoviesRV, moviesRvWeek;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +42,16 @@ public class MainActivity extends AppCompatActivity implements MovieItemClickLis
         iniViews();
         iniSlider();
         iniPopularMovies();
+        iniWeekMovies();
 
+
+    }
+
+    private void iniWeekMovies() {
+
+        MovieAdapter weekMovieAdapter = new MovieAdapter(this, DataSource.getWeekMovies(), this);
+        moviesRvWeek.setAdapter(weekMovieAdapter);
+        moviesRvWeek.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
     }
 
@@ -49,14 +59,7 @@ public class MainActivity extends AppCompatActivity implements MovieItemClickLis
         // Recyclerview Setup
         // ini data
 
-        List<Movie> lstMovies = new ArrayList<>();
-        lstMovies.add(new Movie("Kumfu Panda", R.drawable.kumfu_panda, R.drawable.ice_age_cover));
-        lstMovies.add(new Movie("Ice Age", R.drawable.ice_age, R.drawable.ice_age_cover));
-        lstMovies.add(new Movie("Minions", R.drawable.minions));
-        lstMovies.add(new Movie("Rampage", R.drawable.rampage));
-
-
-        MovieAdapter movieAdapter = new MovieAdapter(this, lstMovies, this);
+        MovieAdapter movieAdapter = new MovieAdapter(this, DataSource.getPopularMovies(), this);
         MoviesRV.setAdapter(movieAdapter);
         MoviesRV.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
     }
@@ -83,6 +86,7 @@ public class MainActivity extends AppCompatActivity implements MovieItemClickLis
         sliderPager = findViewById(R.id.slider_pager);
         indicator = findViewById(R.id.indicator);
         MoviesRV = findViewById(R.id.Rv_movies);
+        moviesRvWeek = findViewById(R.id.rv_movies_week);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
