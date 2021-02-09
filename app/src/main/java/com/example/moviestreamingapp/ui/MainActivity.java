@@ -31,18 +31,37 @@ public class MainActivity extends AppCompatActivity implements MovieItemClickLis
     private List<Slide> listSlides;
     private ViewPager sliderPager;
     private TabLayout indicator;
-    private RecyclerView MoviesRV ;
+    private RecyclerView MoviesRV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        sliderPager = findViewById(R.id.slider_pager);
-         indicator = findViewById(R.id.indicator);
-        MoviesRV = findViewById(R.id.Rv_movies);
+        iniViews();
+        iniSlider();
+        iniPopularMovies();
 
 
+    }
+
+    private void iniPopularMovies() {
+        // Recyclerview Setup
+        // ini data
+
+        List<Movie> lstMovies = new ArrayList<>();
+        lstMovies.add(new Movie("Kumfu Panda", R.drawable.kumfu_panda, R.drawable.ice_age_cover));
+        lstMovies.add(new Movie("Ice Age", R.drawable.ice_age, R.drawable.ice_age_cover));
+        lstMovies.add(new Movie("Minions", R.drawable.minions));
+        lstMovies.add(new Movie("Rampage", R.drawable.rampage));
+
+
+        MovieAdapter movieAdapter = new MovieAdapter(this, lstMovies, this);
+        MoviesRV.setAdapter(movieAdapter);
+        MoviesRV.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+    }
+
+    private void iniSlider() {
         //prepare a list of slides
 
         listSlides = new ArrayList<>();
@@ -55,25 +74,15 @@ public class MainActivity extends AppCompatActivity implements MovieItemClickLis
 
         // setup timer
         Timer timer = new Timer();
-        timer.scheduleAtFixedRate(new MainActivity.SliderTimer(),4000,6000);
+        timer.scheduleAtFixedRate(new SliderTimer(), 4000, 6000);
 
-        indicator.setupWithViewPager(sliderPager,true);
+        indicator.setupWithViewPager(sliderPager, true);
+    }
 
-        // Recyclerview Setup
-        // ini data
-
-        List<Movie> lstMovies = new ArrayList<>();
-        lstMovies.add(new Movie("Kumfu Panda",R.drawable.kumfu_panda, R.drawable.ice_age_cover));
-        lstMovies.add(new Movie("Ice Age",R.drawable.ice_age, R.drawable.ice_age_cover));
-        lstMovies.add(new Movie("Minions",R.drawable.minions));
-        lstMovies.add(new Movie("Rampage",R.drawable.rampage));
-
-
-
-
-        MovieAdapter movieAdapter = new MovieAdapter(this,lstMovies,this);
-        MoviesRV.setAdapter(movieAdapter);
-        MoviesRV.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+    private void iniViews() {
+        sliderPager = findViewById(R.id.slider_pager);
+        indicator = findViewById(R.id.indicator);
+        MoviesRV = findViewById(R.id.Rv_movies);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -83,21 +92,21 @@ public class MainActivity extends AppCompatActivity implements MovieItemClickLis
         // here we send movie information to detail activity
         // also we ll create the transition animation between the two activity
 
-        Intent intent = new Intent(this,MovieDetailActivity.class);
+        Intent intent = new Intent(this, MovieDetailActivity.class);
         // send movie information to deatilActivity
-        intent.putExtra("title",movie.getTitle());
-        intent.putExtra("imgURL",movie.getThumbnail());
-        intent.putExtra("imgCover",movie.getCoverPhoto());
+        intent.putExtra("title", movie.getTitle());
+        intent.putExtra("imgURL", movie.getThumbnail());
+        intent.putExtra("imgCover", movie.getCoverPhoto());
         // lets crezte the animation
         ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this,
-                movieImageView,"sharedName");
+                movieImageView, "sharedName");
 
-        startActivity(intent,options.toBundle());
+        startActivity(intent, options.toBundle());
 
 
         // i l make a simple test to see if the click works
 
-        Toast.makeText(this,"item clicked : " + movie.getTitle(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "item clicked : " + movie.getTitle(), Toast.LENGTH_SHORT).show();
         // it works great
 
     }
@@ -111,10 +120,9 @@ public class MainActivity extends AppCompatActivity implements MovieItemClickLis
             MainActivity.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    if (sliderPager.getCurrentItem()<listSlides.size()-1) {
-                        sliderPager.setCurrentItem(sliderPager.getCurrentItem()+1);
-                    }
-                    else
+                    if (sliderPager.getCurrentItem() < listSlides.size() - 1) {
+                        sliderPager.setCurrentItem(sliderPager.getCurrentItem() + 1);
+                    } else
                         sliderPager.setCurrentItem(0);
                 }
             });
