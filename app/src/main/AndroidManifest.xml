@@ -12,15 +12,16 @@
         android:theme="@style/Theme.MovieStreamingApp">
         <activity android:name=".ui.MoviePlayerActivity">
 
+        </activity>
+        <activity android:name=".ui.MovieDetailActivity" />
+
+        <activity android:name=".ui.MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".ui.MovieDetailActivity" />
-
-        <activity android:name=".ui.MainActivity">
 
         </activity>
 
