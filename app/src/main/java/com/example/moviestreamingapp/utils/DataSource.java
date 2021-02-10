@@ -11,10 +11,10 @@ public class DataSource {
     public static List<Movie> getPopularMovies() {
 
         List<Movie> lstMovies = new ArrayList<>();
-        lstMovies.add(new Movie("Kumfu Panda", R.drawable.kumfu_panda, R.drawable.ice_age_cover));
+        lstMovies.add(new Movie("Kumfu Panda", R.drawable.kumfu_panda, R.drawable.kumfu_panda_cover));
         lstMovies.add(new Movie("Ice Age", R.drawable.ice_age, R.drawable.ice_age_cover));
-        lstMovies.add(new Movie("Minions", R.drawable.minions));
-        lstMovies.add(new Movie("Rampage", R.drawable.rampage));
+        lstMovies.add(new Movie("Minions", R.drawable.minions, R.drawable.minions_cover));
+        lstMovies.add(new Movie("Rampage", R.drawable.rampage, R.drawable.rampage_cover));
 
         return lstMovies;
 
@@ -25,9 +25,9 @@ public class DataSource {
 
 
         List<Movie> lstMovies = new ArrayList<>();
-        lstMovies.add(new Movie("Minions", R.drawable.minions));
-        lstMovies.add(new Movie("Rampage", R.drawable.rampage));
-        lstMovies.add(new Movie("Kumfu Panda", R.drawable.kumfu_panda, R.drawable.ice_age_cover));
+        lstMovies.add(new Movie("Minions", R.drawable.minions, R.drawable.minions_cover));
+        lstMovies.add(new Movie("Rampage", R.drawable.rampage, R.drawable.rampage_cover));
+        lstMovies.add(new Movie("Kumfu Panda", R.drawable.kumfu_panda, R.drawable.kumfu_panda_cover));
         lstMovies.add(new Movie("Ice Age", R.drawable.ice_age, R.drawable.ice_age_cover));
 
 
