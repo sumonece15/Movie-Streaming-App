@@ -37,12 +37,25 @@ public class MovieDetailActivity extends AppCompatActivity implements View.OnCli
         iniViews();
 
         // setup list cast
-        
+
 
         //ini Movie cast
         iniIceAgeMovieCast();
 
+        //ini Movie Cast
+        iniMinionsMovieCast();
+
         play_fab.setOnClickListener(this);
+
+
+    }
+
+    private void iniMinionsMovieCast() {
+
+        CastAdapter minionsMovieCastAdapter = new CastAdapter(this, DataSource.getIceAgeMovieCast(), this);
+        RvCast.setAdapter(minionsMovieCastAdapter);
+        RvCast.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
 
 
     }
