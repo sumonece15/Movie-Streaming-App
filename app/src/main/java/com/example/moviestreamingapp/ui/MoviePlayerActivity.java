@@ -1,9 +1,11 @@
 package com.example.moviestreamingapp.ui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
 
@@ -31,9 +33,23 @@ public class MoviePlayerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_player);
 
+        this.setTitle("Movie player Activity");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
         iniExoPlayer();
 
 
+    }
+
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (item.getItemId() == android.R.id.home){
+
+            this.finish();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 
