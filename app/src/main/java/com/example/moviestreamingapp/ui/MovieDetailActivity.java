@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -18,7 +20,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieDetailActivity extends AppCompatActivity {
+public class MovieDetailActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ImageView MovieThumbnailImg, MovieCoverImg;
     private TextView tv_title, tv_description;
@@ -35,6 +37,8 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         // setup list cast
         setupRvCast();
+
+        play_fab.setOnClickListener(this);
 
 
     }
@@ -59,6 +63,7 @@ public class MovieDetailActivity extends AppCompatActivity {
         play_fab.setAnimation(AnimationUtils.loadAnimation(this, R.anim.scale_animation));
 
 
+
     }
 
     void setupRvCast() {
@@ -81,4 +86,19 @@ public class MovieDetailActivity extends AppCompatActivity {
     }
 
 
+    @Override
+    public void onClick(View v) {
+
+        if (v.getId() == R.id.play_fab){
+
+            Intent intent = new Intent(MovieDetailActivity.this, MoviePlayerActivity.class);
+            startActivity(intent);
+
+
+
+        }
+
+
+
+    }
 }
