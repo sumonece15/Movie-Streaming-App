@@ -19,8 +19,8 @@ import java.util.List;
 
 public class SliderPagerAdapter extends PagerAdapter {
 
-    private Context mContext ;
-    private List<Slide> mList ;
+    private Context mContext;
+    private List<Slide> mList;
 
 
     public SliderPagerAdapter(Context mContext, List<Slide> mList) {
@@ -35,7 +35,7 @@ public class SliderPagerAdapter extends PagerAdapter {
 
 
         LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View slideLayout = inflater.inflate(R.layout.slide_item,null);
+        View slideLayout = inflater.inflate(R.layout.slide_item, null);
 
         ImageView slideImg = slideLayout.findViewById(R.id.slide_img);
         TextView slideText = slideLayout.findViewById(R.id.slide_title);
@@ -44,10 +44,6 @@ public class SliderPagerAdapter extends PagerAdapter {
 
         container.addView(slideLayout);
         return slideLayout;
-
-
-
-
 
 
     }
@@ -65,6 +61,6 @@ public class SliderPagerAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
-        container.removeView((View)object);
+        container.removeView((View) object);
     }
 }
