@@ -21,7 +21,10 @@ public class MoviePlayerActivity extends AppCompatActivity {
 
     private PlayerView playerView;
     private SimpleExoPlayer simpleExoPlayer;
-    public static final String VIDEO_TEST_URL = "https://html5demos.com/assets/dizzy.mp4";
+    public static final String VIDEO_TEST_URL = "https://i.imgur.com/7bMqysJ.mp4";
+
+    //link1-https://html5demos.com/assets/dizzy.mp4
+    //link2-https://i.imgur.com/7bMqysJ.mp4
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
