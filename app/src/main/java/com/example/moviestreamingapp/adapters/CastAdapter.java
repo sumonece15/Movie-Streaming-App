@@ -45,7 +45,7 @@ public class CastAdapter extends RecyclerView.Adapter<CastAdapter.CastViewHolder
         return mData.size();
     }
 
-    public class CastViewHolder extends RecyclerView.ViewHolder{
+    public class CastViewHolder extends RecyclerView.ViewHolder {
 
         ImageView img;
 
