@@ -2,7 +2,7 @@ package com.example.moviestreamingapp.models;
 
 public class Slide {
 
-    private int Image ;
+    private int Image;
     private String Title;
     // Add more field depand on whay you wa&nt ...
 
