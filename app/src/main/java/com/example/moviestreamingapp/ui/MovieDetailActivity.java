@@ -50,20 +50,22 @@ public class MovieDetailActivity extends AppCompatActivity implements View.OnCli
 
     }
 
-    private void iniMinionsMovieCast() {
 
-        CastAdapter minionsMovieCastAdapter = new CastAdapter(this, DataSource.getIceAgeMovieCast(), this);
-        RvCast.setAdapter(minionsMovieCastAdapter);
+
+    private void iniIceAgeMovieCast() {
+
+        CastAdapter iceAgeMovieCastAdapter = new CastAdapter(this, DataSource.getIceAgeMovieCast(), this);
+        RvCast.setAdapter(iceAgeMovieCastAdapter);
         RvCast.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
 
 
     }
 
-    private void iniIceAgeMovieCast() {
+    private void iniMinionsMovieCast() {
 
-        CastAdapter iceAgeMovieCastAdapter = new CastAdapter(this, DataSource.getIceAgeMovieCast(), this);
-        RvCast.setAdapter(iceAgeMovieCastAdapter);
+        CastAdapter minionsMovieCastAdapter = new CastAdapter(this, DataSource.getMonionsMovieCast(), this);
+        RvCast.setAdapter(minionsMovieCastAdapter);
         RvCast.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
 

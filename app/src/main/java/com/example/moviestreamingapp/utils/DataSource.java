@@ -49,4 +49,20 @@ public class DataSource {
 
         return mdata;
     }
+
+
+    public static List<Cast> getMonionsMovieCast(){
+
+        List<Cast> mdata = new ArrayList<>();
+        mdata.add(new Cast("name", R.drawable.minions_pierre_coffin));
+        mdata.add(new Cast("name", R.drawable.minions_steve_coogan));
+        mdata.add(new Cast("name", R.drawable.minions_allison_janney));
+        mdata.add(new Cast("name", R.drawable.minions_jon_hamm));
+        mdata.add(new Cast("name", R.drawable.minions_michael_keaton));
+        mdata.add(new Cast("name", R.drawable.minions_geoffrey_rush));
+        mdata.add(new Cast("name", R.drawable.minions_jennifer_saunders));
+
+        return mdata;
+
+    }
 }
