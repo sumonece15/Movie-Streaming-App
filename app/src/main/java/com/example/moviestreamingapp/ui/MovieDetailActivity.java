@@ -26,7 +26,7 @@ import java.util.List;
 public class MovieDetailActivity extends AppCompatActivity implements View.OnClickListener{
 
     private ImageView MovieThumbnailImg, MovieCoverImg;
-    private TextView tv_title, tv_description;
+    private TextView tv_title, tv_description1, tv_description2;
     private FloatingActionButton play_fab;
     private RecyclerView RvCast;
     private CastAdapter castAdapter;
@@ -103,7 +103,10 @@ public class MovieDetailActivity extends AppCompatActivity implements View.OnCli
         tv_title = findViewById(R.id.detail_movie_title);
         tv_title.setText(movieTitle);
         getSupportActionBar().setTitle(movieTitle);
-        tv_description = findViewById(R.id.detail_movie_desc);
+
+        tv_description1 = findViewById(R.id.detail_movie_desc1);
+        tv_description2 = findViewById(R.id.detail_movie_desc2);
+
         // setup animation
         MovieCoverImg.setAnimation(AnimationUtils.loadAnimation(this, R.anim.scale_animation));
         play_fab.setAnimation(AnimationUtils.loadAnimation(this, R.anim.scale_animation));

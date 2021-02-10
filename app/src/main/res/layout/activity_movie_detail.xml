@@ -74,18 +74,35 @@
             app:layout_constraintTop_toBottomOf="@+id/detail_movie_cover" />
 
         <TextView
-            android:id="@+id/detail_movie_desc"
+            android:id="@+id/detail_movie_desc1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:lineSpacingExtra="8dp"
-            android:text="@string/simple_text"
+            android:text="Genre : Animation"
+            android:textStyle="bold"
             android:textColor="@color/text_light_blue"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/detail_movie_img" />
+
+
+        <TextView
+            android:id="@+id/detail_movie_desc2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:lineSpacingExtra="8dp"
+            android:text="Imdb Rating : 7.5"
+            android:textStyle="bold"
+            android:textColor="@color/text_light_blue"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detail_movie_desc1" />
 
 
         <TextView
@@ -104,7 +121,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/detail_movie_desc"
+            app:layout_constraintTop_toBottomOf="@id/detail_movie_desc2"
             app:layout_constraintVertical_bias="0.00999999" />
 
         <androidx.recyclerview.widget.RecyclerView
