@@ -20,8 +20,8 @@ import java.util.List;
 
 public class MovieDetailActivity extends AppCompatActivity {
 
-    private ImageView MovieThumbnailImg,MovieCoverImg;
-    private TextView tv_title,tv_description;
+    private ImageView MovieThumbnailImg, MovieCoverImg;
+    private TextView tv_title, tv_description;
     private FloatingActionButton play_fab;
     private RecyclerView RvCast;
     private CastAdapter castAdapter;
@@ -35,8 +35,6 @@ public class MovieDetailActivity extends AppCompatActivity {
 
         // setup list cast
         setupRvCast();
-
-
 
 
     }
@@ -57,16 +55,13 @@ public class MovieDetailActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(movieTitle);
         tv_description = findViewById(R.id.detail_movie_desc);
         // setup animation
-        MovieCoverImg.setAnimation(AnimationUtils.loadAnimation(this,R.anim.scale_animation));
-        play_fab.setAnimation(AnimationUtils.loadAnimation(this,R.anim.scale_animation));
-
-
-
+        MovieCoverImg.setAnimation(AnimationUtils.loadAnimation(this, R.anim.scale_animation));
+        play_fab.setAnimation(AnimationUtils.loadAnimation(this, R.anim.scale_animation));
 
 
     }
 
-    void setupRvCast(){
+    void setupRvCast() {
 
         List<Cast> mdata = new ArrayList<>();
         mdata.add(new Cast("name", R.drawable.ice_age_john_leguizamo));
