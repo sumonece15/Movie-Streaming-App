@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.MovieDetailActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    tools:context=".ui.MovieDetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -51,11 +50,11 @@
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:scaleType="centerCrop"
+            android:src="@drawable/kumfu_panda"
             android:transitionName="sharedName"
             app:layout_constraintBottom_toBottomOf="@+id/detail_movie_cover"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/detail_movie_cover"
-            android:src="@drawable/kumfu_panda" />
+            app:layout_constraintTop_toBottomOf="@+id/detail_movie_cover" />
 
         <TextView
             android:id="@+id/detail_movie_title"
@@ -67,9 +66,9 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="TextView"
-            android:textStyle="bold"
-            android:textSize="20sp"
             android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/detail_movie_img"
             app:layout_constraintTop_toBottomOf="@+id/detail_movie_cover" />
@@ -98,9 +97,9 @@
             android:background="@color/text_bg_blue"
             android:padding="16dp"
             android:text="Cast"
+            android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -118,9 +117,6 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
