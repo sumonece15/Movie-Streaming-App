@@ -1,6 +1,7 @@
 package com.example.moviestreamingapp.utils;
 
 import com.example.moviestreamingapp.R;
+import com.example.moviestreamingapp.models.Cast;
 import com.example.moviestreamingapp.models.Movie;
 
 import java.util.ArrayList;
@@ -33,5 +34,19 @@ public class DataSource {
 
         return lstMovies;
 
+    }
+
+    public static List<Cast> getIceAgeMovieCast(){
+
+        List<Cast> mdata = new ArrayList<>();
+        mdata.add(new Cast("name", R.drawable.ice_age_john_leguizamo));
+        mdata.add(new Cast("name", R.drawable.ice_age_ray_romano));
+        mdata.add(new Cast("name", R.drawable.ice_age_jessie_j));
+        mdata.add(new Cast("name", R.drawable.ice_age_denis_leary));
+        mdata.add(new Cast("name", R.drawable.ice_age_simon_pegg));
+        mdata.add(new Cast("name", R.drawable.ice_age_queen_latifah));
+        mdata.add(new Cast("name", R.drawable.ice_age_josh_peck));
+
+        return mdata;
     }
 }

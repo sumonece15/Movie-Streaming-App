@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.moviestreamingapp.R;
 import com.example.moviestreamingapp.models.Cast;
+import com.example.moviestreamingapp.ui.MovieDetailActivity;
 
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class CastAdapter extends RecyclerView.Adapter<CastAdapter.CastViewHolder
     Context mContext;
     List<Cast> mData;
 
-    public CastAdapter(Context mContext, List<Cast> mData) {
+    public CastAdapter(Context mContext, List<Cast> mData, MovieDetailActivity movieDetailActivity) {
         this.mContext = mContext;
         this.mData = mData;
     }
