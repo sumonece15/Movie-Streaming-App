@@ -8,7 +8,7 @@ import java.util.List;
 
 public class DataSource {
 
-    public static List<Movie> getPopularMovies(){
+    public static List<Movie> getPopularMovies() {
 
         List<Movie> lstMovies = new ArrayList<>();
         lstMovies.add(new Movie("Kumfu Panda", R.drawable.kumfu_panda, R.drawable.ice_age_cover));
@@ -19,10 +19,9 @@ public class DataSource {
         return lstMovies;
 
 
-
     }
 
-    public static List<Movie> getWeekMovies(){
+    public static List<Movie> getWeekMovies() {
 
 
         List<Movie> lstMovies = new ArrayList<>();
