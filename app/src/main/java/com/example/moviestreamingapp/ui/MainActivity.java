@@ -71,6 +71,9 @@ public class MainActivity extends AppCompatActivity implements MovieItemClickLis
         listSlides.add(new Slide(R.drawable.slide1, "Debi/nmore text here"));
         listSlides.add(new Slide(R.drawable.slide2, "Halda/nmore text here"));
         listSlides.add(new Slide(R.drawable.slide3, "Taqdeer/nmore text here"));
+        listSlides.add(new Slide(R.drawable.slide4, "Oggatonama/nmore text here"));
+        listSlides.add(new Slide(R.drawable.slide5, "Aynabaji/nmore text here"));
+        listSlides.add(new Slide(R.drawable.slide6, "Television/nmore text here"));
 
         SliderPagerAdapter adapter = new SliderPagerAdapter(this, listSlides);
         sliderPager.setAdapter(adapter);
