@@ -23,7 +23,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MovieDetailActivity extends AppCompatActivity implements View.OnClickListener{
+public class MovieDetailActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView MovieThumbnailImg, MovieCoverImg;
     private TextView tv_title, tv_description1, tv_description2;
@@ -59,7 +59,7 @@ public class MovieDetailActivity extends AppCompatActivity implements View.OnCli
 
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-        if (item.getItemId() == android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
 
             this.finish();
         }
@@ -68,13 +68,11 @@ public class MovieDetailActivity extends AppCompatActivity implements View.OnCli
     }
 
 
-
     private void iniIceAgeMovieCast() {
 
         CastAdapter iceAgeMovieCastAdapter = new CastAdapter(this, DataSource.getIceAgeMovieCast(), this);
         RvCast.setAdapter(iceAgeMovieCastAdapter);
         RvCast.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-
 
 
     }
@@ -86,20 +84,24 @@ public class MovieDetailActivity extends AppCompatActivity implements View.OnCli
         RvCast.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
 
-
     }
 
     void iniViews() {
+
         RvCast = findViewById(R.id.rv_Cast);
         play_fab = findViewById(R.id.play_fab);
+
         String movieTitle = getIntent().getExtras().getString("title");
         int imageResourceId = getIntent().getExtras().getInt("imgURL");
         int imagecover = getIntent().getExtras().getInt("imgCover");
+
         MovieThumbnailImg = findViewById(R.id.detail_movie_img);
         Glide.with(this).load(imageResourceId).into(MovieThumbnailImg);
         MovieThumbnailImg.setImageResource(imageResourceId);
+
         MovieCoverImg = findViewById(R.id.detail_movie_cover);
         Glide.with(this).load(imagecover).into(MovieCoverImg);
+
         tv_title = findViewById(R.id.detail_movie_title);
         tv_title.setText(movieTitle);
         getSupportActionBar().setTitle(movieTitle);
@@ -112,24 +114,19 @@ public class MovieDetailActivity extends AppCompatActivity implements View.OnCli
         play_fab.setAnimation(AnimationUtils.loadAnimation(this, R.anim.scale_animation));
 
 
-
     }
-
-
 
 
     @Override
     public void onClick(View v) {
 
-        if (v.getId() == R.id.play_fab){
+        if (v.getId() == R.id.play_fab) {
 
             Intent intent = new Intent(MovieDetailActivity.this, MoviePlayerActivity.class);
             startActivity(intent);
 
 
-
         }
-
 
 
     }
