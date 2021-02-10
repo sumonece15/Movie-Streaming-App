@@ -31,10 +31,7 @@ public class MoviePlayerActivity extends AppCompatActivity {
         iniExoPlayer();
 
 
-
-
     }
-
 
 
     private void iniExoPlayer() {
