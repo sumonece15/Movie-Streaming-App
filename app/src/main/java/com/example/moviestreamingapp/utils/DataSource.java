@@ -36,7 +36,7 @@ public class DataSource {
 
     }
 
-    public static List<Cast> getIceAgeMovieCast(){
+    public static List<Cast> getIceAgeMovieCast() {
 
         List<Cast> mdata = new ArrayList<>();
         mdata.add(new Cast("name", R.drawable.ice_age_john_leguizamo));
@@ -51,7 +51,7 @@ public class DataSource {
     }
 
 
-    public static List<Cast> getMonionsMovieCast(){
+    public static List<Cast> getMonionsMovieCast() {
 
         List<Cast> mdata = new ArrayList<>();
         mdata.add(new Cast("name", R.drawable.minions_pierre_coffin));
