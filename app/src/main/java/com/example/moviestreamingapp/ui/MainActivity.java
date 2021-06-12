@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements MovieItemClickLis
         startActivity(intent, options.toBundle());
 
 
-        // i l make a simple test to see if the click works
+        // i will make a simple test to see if the click works
 
         Toast.makeText(this, "item clicked : " + movie.getTitle(), Toast.LENGTH_SHORT).show();
         // it works great
