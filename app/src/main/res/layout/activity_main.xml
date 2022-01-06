@@ -14,7 +14,7 @@
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/slider_pager"
             android:layout_width="0dp"
-            android:layout_height="255dp"
+            android:layout_height="256dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
