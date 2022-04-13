@@ -43,9 +43,6 @@ public class MainActivity extends AppCompatActivity implements MovieItemClickLis
         iniSlider();
         iniPopularMovies();
         iniWeekMovies();
-
-        //This is test branch
-
     }
 
     private void iniWeekMovies() {
